@@ -1,11 +1,88 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const siteTitle = "Astro + microCMS テンプレート";
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{siteTitle}</title>
+    <style>
+      :root {
+        color-scheme: light;
+      }
+      body {
+        margin: 0;
+        font-family: system-ui, -apple-system, sans-serif;
+        line-height: 1.6;
+        color: #1f2937;
+        background: #fff;
+      }
+      header,
+      main,
+      footer {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 24px;
+      }
+      header {
+        border-bottom: 1px solid #e5e7eb;
+      }
+      nav a {
+        margin-right: 16px;
+        color: #2563eb;
+        text-decoration: none;
+      }
+      nav a:hover {
+        text-decoration: underline;
+      }
+      footer {
+        border-top: 1px solid #e5e7eb;
+        color: #6b7280;
+        font-size: 0.9rem;
+      }
+      .hero {
+        padding: 32px 0;
+      }
+      .hero h1 {
+        margin: 0 0 8px;
+        font-size: 2rem;
+      }
+      .hero p {
+        margin: 0;
+      }
+      .cta {
+        display: inline-block;
+        margin-top: 16px;
+        padding: 10px 14px;
+        border-radius: 6px;
+        background: #2563eb;
+        color: #fff;
+        text-decoration: none;
+      }
+      .cta:hover {
+        background: #1d4ed8;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/news">News</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <h1>{siteTitle}</h1>
+        <p>Astro と microCMS を使った静的サイト用テンプレートです。</p>
+        <a class="cta" href="/news">お知らせ一覧を見る</a>
+      </section>
+    </main>
+
+    <footer>
+      <small>&copy; {new Date().getFullYear()} Astro + microCMS Template</small>
+    </footer>
+  </body>
+</html>
